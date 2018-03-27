@@ -1,0 +1,59 @@
+Course: CONSTRUCTION OF LANGUAGE TRANSLATORS 
+
+Name : Natnael Mengesha
+
+Project:No.5
+
+Description
+
+Project 5 generates a c program, where we have flex which is c program in Linux receives regular expression as input, 
+creating a c program as output which is a lexical analyzer. Bison then receives grammar rules as input and creates
+ an LALR parse table as output that will be used to do LR parsing.
+
+.l file which is the extension file for flex consist of 
+
+Declarations - declarations of variables, identifiers that
+    	       represent constants, and regular definitions
+%%
+
+translation rules- p1   {action1}
+		   p's are regular expressions representing patterns actions are written in C 
+		   and indicate the "action" tobe taken when the "pattern" is recognized.
+
+%%
+
+auxiliary procedures- - those procedures needed by the lexical
+      			analyzer, they will be in the form of C functions.
+
+yytext is set to hold the lexeme
+yyleng is an integer telling how long the lexeme is.
+yylval is a code set to return to the parser.
+
+Given multiple rules, lex will match only the rule that produces the
+longest match. If two rules match the same set of characters, the rule
+specified first will be applied.
+
+.y consist of 
+
+declarations- declarations of variables, grammar rules, and
+  	      anything that should be copied into y.tab.c exactly (those
+  	      items in %{ ... followed by %}. This can be empty. If the first rule is not the start of the grammar,
+ 	      a start command indicating the start of the grammar.
+	      The next item is declaration of the tokens
+
+%%
+
+translation rules- - these are modified BNF rules with actions to be executed when
+   		     the grammar rule is recognized.
+%%
+
+auxiliary procedures -- those procedures needed by the parser, they are in the form of C functions.
+			The output of the program will be ACCEPT or REJECT of a sql query statement
+
+
+
+
+
+
+
+
